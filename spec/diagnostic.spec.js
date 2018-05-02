@@ -9,30 +9,30 @@ chai.use(chaiAsPromised)
 
 const diagnostic = require('../lib/diagnostic')
 
-describe('Sum of lines in integers.txt', function () {
-  it('should equal 88', function () {
-    return expect(diagnostic.sumLines('data/integers.txt'))
-      .to.eventually.equal(88)
+describe('Count the number of lines in integers.txt', function () {
+  it('should equal 11', function () {
+    return expect(diagnostic.lineCounter('data/integers.txt'))
+      .to.eventually.equal(11)
   })
 })
 
-describe('Sum of lines in blanks.txt', function () {
+describe('Count the number of lines in blanks.txt', function () {
   it('should equal 12', function () {
-    return expect(diagnostic.sumLines('data/blanks.txt'))
+    return expect(diagnostic.lineCounter('data/blanks.txt'))
       .to.eventually.equal(12)
   })
 })
 
-describe('Sum of lines in numbers.txt', function () {
-  it('should equal 12.93', function () {
-    return expect(diagnostic.sumLines('data/numbers.txt'))
-      .to.eventually.equal(12.93)
+describe('Count the number of lines in number.txt', function () {
+  it('should equal 5', function () {
+    return expect(diagnostic.lineCounter('data/numbers.txt'))
+      .to.eventually.equal(5)
   })
 })
 
-describe('Sum of lines in strings.txt', function () {
-  it('should pass an error', function () {
-    return expect(diagnostic.sumLines('data/strings.txt'))
-      .to.eventually.be.rejectedWith(Error)
+describe('Count the number of lines in strings.txt', function () {
+  it('should equal 6', function () {
+    return expect(diagnostic.lineCounter('data/strings.txt'))
+      .to.eventually.equal(6)
   })
 })
